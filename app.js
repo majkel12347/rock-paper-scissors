@@ -106,5 +106,12 @@ startGameBtn.addEventListener("click", function () {
 
   getScore(winner);
 
+  if (pScore === 2 || cScore === 2) {
+    computerScore.textContent = 0;
+    playerScore.textContent = 0;
+    draw.textContent = "END GAME";
+    return gameIsRunnung;
+  }
+
   gameIsRunnung = false;
 });
