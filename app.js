@@ -1,4 +1,4 @@
-const startGameBtn = document.getElementById('start-game-btn');
+const startGameBtn = document.getElementById("start-game-btn");
 
 const showComputer = document.getElementById("show-computer");
 const showPlayer = document.getElementById("show-player");
@@ -16,6 +16,24 @@ const DEFAULT_USER_CHOICE = "ROCK";
 
 let gameIsRunnung = false;
 
+let playerScore = document.getElementById("pScore");
+let computerScore = document.getElementById("cScore");
+let draw = document.getElementById("draw");
+let pScore = 0;
+let cScore = 0;
+
+function getScore(win) {
+  if (win === COMPUTER_WIN) {
+    cScore++;
+    computerScore.textContent = cScore;
+  } else if (win === PLAYER_WIN) {
+    pScore++;
+    playerScore.textContent = pScore;
+  } else if (RESULT_DRAW) {
+    draw.textContent = "DRAW";
+  }
+}
+
 // adding user choices to the game
 
 const getPlayerChoice = () => {
@@ -25,6 +43,12 @@ const getPlayerChoice = () => {
     imageP.src = "rock.png";
     alert(`Wrong choice, we choose ${DEFAULT_USER_CHOICE} for you: !`);
     return DEFAULT_USER_CHOICE;
+  } else if (selection === SCISSORS) {
+    imageP.src = "scissors.png";
+    return SCISSORS;
+  } else if (selection === PAPER) {
+    imageP.src = "paper.png";
+    return PAPER;
   }
 
   return selection;
@@ -73,7 +97,9 @@ startGameBtn.addEventListener("click", function () {
     : winner === PLAYER_WIN
     ? (message += "Player Win!")
     : (message += "Computer Win!");
-
   console.log(`${message} `);
+
+  getScore(winner);
+
   gameIsRunnung = false;
 });
