@@ -22,14 +22,18 @@ let draw = document.getElementById("draw");
 let pScore = 0;
 let cScore = 0;
 
-// adding get score function 
+// set get score function
 function getScore(win) {
   if (win === COMPUTER_WIN) {
     cScore++;
     computerScore.textContent = cScore;
+    computerScore.style.color = "orangered";
+    draw.textContent = "";
   } else if (win === PLAYER_WIN) {
     pScore++;
     playerScore.textContent = pScore;
+    playerScore.style.color = "green";
+    draw.textContent = "";
   } else if (RESULT_DRAW) {
     draw.textContent = "DRAW";
   }
