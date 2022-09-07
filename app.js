@@ -22,6 +22,7 @@ let draw = document.getElementById("draw");
 let pScore = 0;
 let cScore = 0;
 
+// adding get score function 
 function getScore(win) {
   if (win === COMPUTER_WIN) {
     cScore++;
