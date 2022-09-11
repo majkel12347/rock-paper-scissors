@@ -6,6 +6,9 @@ const showPlayer = document.getElementById("show-player");
 const imageP = document.getElementById("image-player");
 const imageC = document.getElementById("image-computer");
 
+const txtPwin = document.getElementById("winnerP");
+const txtCwin = document.getElementById("winnerC");
+
 const ROCK = "ROCK";
 const PAPER = "PAPER";
 const SCISSORS = "SCISSORS";
@@ -40,14 +43,19 @@ function getScore(win) {
 }
 
 function endGame() {
-  if (pScore === 2 || cScore === 2) {
-    computerScore.textContent = 0;
-    playerScore.textContent = 0;
+  if (pScore === 2) {
     draw.textContent = "END GAME";
+    txtPwin.style.display = "flex";
+    playerScore.textContent = 0;
+    return (gameIsRunnung = true);
+  } else if (cScore === 2) {
+    draw.textContent = "END GAME";
+    txtCwin.style.display = "flex";
+    computerScore.textContent = 0;
+
     return (gameIsRunnung = true);
   }
 }
-
 // adding user choices to the game
 
 const getPlayerChoice = () => {
