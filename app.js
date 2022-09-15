@@ -52,7 +52,6 @@ function endGame() {
     draw.textContent = "END GAME";
     txtCwin.style.display = "flex";
     computerScore.textContent = 0;
-
     return (gameIsRunnung = true);
   }
 }
@@ -103,10 +102,14 @@ const getWinner = (cChoice, pChoice) => {
 };
 
 startGameBtn.addEventListener("click", function () {
+  startGameBtn.classList.toggle("start-game-btn");
+  startGameBtn.classList.toggle("bg");
+
   if (gameIsRunnung) {
     return;
   }
   gameIsRunnung = true;
+
   console.log("Game is starting");
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoice();

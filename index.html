@@ -5,9 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="style.css" ></link>
   <script src="app.js" defer></script>
 </head>
 <body>
-  <button id="start-game-btn">Start Game!</button>
+  <container class="game">
+    <div class="box">
+      <h3>Player: </h3>
+      <p id="pScore">0</p>
+
+      <div id="show-player"><img id="image-player" src="scissors.png" alt="player-img"></div>
+    <p id="winnerP">Winner!!!</p>
+
+    </div>
+  
+<div class="box">
+  <h3>Computer: </h3>
+    <p id="cScore">0</p>
+    <div id="show-computer"><img id="image-computer" src="scissors.png" alt="computer-img"></div>
+    <p id="winnerC">Winner!!!</p>
+
+  </div>
+  
+
+   
+  <h2 id="draw"></h2>
+    
+    <button class="bg"id="start-game-btn">Start Game!</button>
+  </container>
+  <ul>
+    <li id="item">1</li>
+    <li id="item">2</li>
+    <li id="item">3</li>
+  </ul>
+
+
 </body>
 </html>
+
